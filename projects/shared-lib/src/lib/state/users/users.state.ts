@@ -6,11 +6,11 @@ export interface User {
     mobile: number | undefined;
   }
 
-const initialState: User = {
+const initialState: User[] = [{
     name: 'Ansuman',
     email: 'sunmoon@gmail.com',
     mobile: 9007770
-  };
+  }];
 
 
     const reducer = createReducer(
