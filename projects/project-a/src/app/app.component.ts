@@ -1,24 +1,15 @@
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { DevicesFacadeService } from 'projects/shared-lib/src/public-api';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [CommonModule, AsyncPipe]
+  imports: [CommonModule, AsyncPipe, RouterModule]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'project-a';
-  devices$ = this.devicesFacadeService.devices$;
 
-  constructor(private readonly devicesFacadeService: DevicesFacadeService) {
-
-  }
-
-  ngOnInit() {
-     // Load devices
-     this.devicesFacadeService.loadDevices();   
-  }
 }
